@@ -1,0 +1,7 @@
+---
+description: Contrato do JSON exportado pelo Strooper
+globs: src/telemetry/**,src/game/scoring*
+alwaysApply: false
+---
+
+O formato do JSON e as regras de cálculo estão em `docs/engineering/telemetry.md`. Nomes de campo são um contrato: mudar exige atualizar o documento e o `schema_version`.

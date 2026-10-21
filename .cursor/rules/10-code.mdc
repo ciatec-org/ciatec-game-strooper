@@ -1,0 +1,10 @@
+---
+description: Convenções de código TypeScript/React do Strooper
+globs: src/**/*.ts,src/**/*.tsx,src/**/*.css
+alwaysApply: false
+---
+
+- Siga `docs/engineering/conventions.md` e `docs/engineering/architecture.md`.
+- `src/game/` e `src/telemetry/` são puros: sem React, sem DOM.
+- Textos de tela só em `src/content/strings.ts`; cores e medidas só em `src/theme/tokens.ts`.
+- Sem `any`, sem `enum`; testes com a semente de `src/game/rng.ts`.

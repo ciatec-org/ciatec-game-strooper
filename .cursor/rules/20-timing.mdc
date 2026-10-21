@@ -1,0 +1,11 @@
+---
+description: Regras de medição de tempo de reação (crítico para os dados)
+globs: src/timing/**,src/trial/**,src/input/**,src/components/ResponseButtons*
+alwaysApply: false
+---
+
+Leia `docs/engineering/timing.md` inteiro antes de editar. Em resumo:
+- `performance.now()` e `event.timeStamp`; nunca `Date.now()`.
+- Resposta em `pointerdown`/`keydown`; nunca `onClick`.
+- Início do estímulo pelo `onNextPaint` (requestAnimationFrame), não pelo `setState`.
+- Timeout relativo ao início pintado; limpar timers na desmontagem.

@@ -1,0 +1,9 @@
+---
+description: Como editar a documentação do Strooper
+globs: docs/**/*.md
+alwaysApply: false
+---
+
+- O GDD (`docs/product/GDD-Strooper.md`) é a fonte de verdade do produto. Decisões seguem `docs/playbooks/record-decision.md`: DDs e itens da seção 15 nunca são renumerados.
+- Specs seguem `docs/specs/_template.md`; atualize o status em `docs/specs/README.md`.
+- Documentação em português do Brasil.

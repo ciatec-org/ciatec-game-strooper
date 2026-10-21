@@ -1,0 +1,9 @@
+---
+description: Regras gerais do projeto Strooper
+alwaysApply: true
+---
+
+- As instruções do projeto estão em `AGENTS.md`. Siga as "Regras que não se quebram" dele.
+- Antes de qualquer tarefa, consulte `docs/INDEX.md` para saber o que ler (playbook `docs/playbooks/organize-context.md`).
+- Inglês em tudo que é estrutura ou código: nomes de pastas e arquivos (inclusive em `docs/`), identificadores, comentários, commits, branches. Português do Brasil só no conteúdo dos documentos e nos textos de tela.
+- Não decida pendências do GDD (`[a definir]`): use o provisório da spec com `TODO(GDD-15.N)`, ou pergunte.
