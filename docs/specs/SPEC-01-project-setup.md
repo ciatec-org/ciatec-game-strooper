@@ -28,8 +28,7 @@ O repositório tem um projeto Vite + React + TypeScript que roda com `npm run de
 - Criar as pastas de `src/` da arquitetura, com um `index.ts` ou arquivo mínimo onde fizer sentido. Não crie código de regra ainda.
 - `src/content/strings.ts` com o título do jogo, e `src/theme/tokens.ts` com tokens provisórios da proposta de visual-identity.md.
 - `App.tsx` mostrando só a tela de início provisória, com o título vindo de `strings.ts`.
-- `.gitignore` com `node_modules/`, `dist/`, `.DS_Store` e `coverage/`.
-- README curto: o que é, como rodar e um link para `AGENTS.md` e `docs/INDEX.md`.
+- O `.gitignore` e o `README.md` já existem: confira que os comandos do README funcionam e ajuste o que mudar.
 
 ## Fora do escopo
 
