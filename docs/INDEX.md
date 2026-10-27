@@ -34,7 +34,7 @@
 | [engineering/conventions.md](engineering/conventions.md) | Idioma, nomes, testes, commits, TODOs | Sempre |
 | [engineering/timing.md](engineering/timing.md) | Como medir tempo sem estragar o dado | Ao tocar em tempo ou entrada |
 | [engineering/telemetry.md](engineering/telemetry.md) | Schema do JSON e regras de cálculo | Ao tocar no registro |
-| [backlog.md](backlog.md) | Histórias, tasks de 1–2 h, sprints e marcos da dupla | Para saber o que fazer nesta semana |
+| [backlog.md](backlog.md) | Histórias, tasks de até 2 h com as dependências, sprints e marcos da dupla, e a base do orientador | Para saber o que fazer nesta semana |
 | [specs/README.md](specs/README.md) | Quadro das specs e status | Para os detalhes técnicos de uma história |
 
 ## Referências

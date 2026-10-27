@@ -24,7 +24,7 @@ A sessão vai do início ao resultado: início, configurações (código do part
 - `app/sessionMachine.ts`: reducer puro com as telas e os blocos na ordem de `game/blocks.ts`.
 - Telas em `screens/`: `StartScreen`, `SetupScreen`, `InstructionsScreen`, `TransitionScreen`, `BlockScreen` e `ResultScreen`.
 - `SetupScreen`: código do participante obrigatório (sem ele, não avança, e aparece o aviso de `strings.ts`) e o modo daltonismo, se a SPEC-00 o tiver decidido. O clique em "Começar" é o instante zero da sessão ([telemetry.md](../engineering/telemetry.md)).
-- `BlockScreen`: usa `useTrialRunner` (SPEC-03) e `ResponseButtons` (SPEC-04) com os estímulos de `buildTrials` (SPEC-02), e entrega os registros para cima.
+- `BlockScreen`: usa `useTrialRunner` (SPEC-03) e `ResponseButtons` (SPEC-04) com os estímulos de `buildTrials` (SPEC-02), e entrega os registros para cima. Ele já existe quando esta spec começa: os estudantes o fazem na T-03.2.1 do backlog, e aqui ele só é ligado à máquina da sessão.
 - `ResultScreen`: mensagem de fim, sem números (DD-08). O download do JSON é ligado na SPEC-07.
 - Pré-carregar a fonte antes do primeiro bloco (`document.fonts.ready`).
 - Todos os textos vêm de `strings.ts`.

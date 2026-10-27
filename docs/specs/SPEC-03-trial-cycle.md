@@ -32,7 +32,7 @@ Um bloco roda tentativa após tentativa: cruz de fixação, palavra colorida at�
   - chama `onTrialComplete(record)` e passa para a próxima tentativa;
   - limpa todos os timers e quadros pendentes na desmontagem (StrictMode).
 - Escuta de `visibilitychange`: marca `visibilityLost` na tentativa em curso.
-- Uma tela de teste provisória, `components/StimulusWord` e `components/FixationCross` mínimos, para ver o ciclo rodando.
+- Uma tela de teste provisória, para ver o ciclo rodando, com os `components/StimulusWord` e `components/FixationCross` que já existem: os estudantes os fazem na US-01.3 do backlog, antes desta spec.
 
 ## Valores provisórios
 
@@ -59,4 +59,4 @@ Um bloco roda tentativa após tentativa: cruz de fixação, palavra colorida at�
 
 - `src/timing/clock.ts`, `onset.ts`
 - `src/trial/trialMachine.ts`, `trialMachine.test.ts`, `useTrialRunner.ts`, `useTrialRunner.test.ts`
-- `src/components/StimulusWord.tsx`, `FixationCross.tsx`
+- `src/components/StimulusWord.tsx`, `FixationCross.tsx` (já existem, da US-01.3; aqui só são usados)

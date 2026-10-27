@@ -39,7 +39,7 @@ Não transforme toda resposta em aula, e não pergunte o que não muda nada.
 
 ## Comandos
 
-Valem depois da SPEC-01, que cria o projeto.
+Valem à medida que a SPEC-01 os cria, em três partes: `install`, `dev`, `build` e `typecheck` na parte 1 e `lint` na parte 3, montadas pelos estudantes; `test` na parte 2, montada pelo orientador junto com os testes. Nas partes dos estudantes, ajude com pistas, e não monte o projeto pelo estudante. Os testes de `game/` e de `telemetry/` são escritos pelo orientador (base do backlog); os estudantes os rodam.
 
 | Comando | Para quê |
 | --- | --- |
@@ -50,7 +50,7 @@ Valem depois da SPEC-01, que cria o projeto.
 | `npm run lint` | ESLint |
 | `npm run typecheck` | `tsc --noEmit` |
 
-Uma tarefa só está pronta com `typecheck`, `lint` e `test` passando.
+Uma tarefa só está pronta com `typecheck`, `lint` e `test` passando (os que a SPEC-01 já criou).
 
 ## Mapa do repositório
 

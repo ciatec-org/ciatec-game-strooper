@@ -22,7 +22,8 @@ Existe uma função pura que, dado um bloco e uma semente, devolve a lista de es
 ## O que fazer
 
 - `game/types.ts`: `ColorId = 'red' | 'green' | 'blue' | 'yellow'`, `Condition`, `BlockId = 'practice' | 'baseline' | 'stroop'`, `Stimulus { word: string; inkColor: ColorId; condition: Condition; wordColor: ColorId | null }`, `BlockConfig`.
-- `game/colors.ts`: a ordem fixa dos quatro `ColorId` e a palavra pt-BR de cada um (`VERMELHO`, `VERDE`, `AZUL` e `AMARELO`).
+- `game/conditions.ts`: `getCondition(word: string, inkColor: ColorId): Condition` — `'neutral'` quando a palavra não é nome de cor (o estímulo neutro), `'congruent'` quando é o nome da cor da tinta, e `'incongruent'` quando é o nome de outra cor. É feita na US-01.1 do backlog, antes do gerador.
+- `game/colors.ts`: a ordem fixa dos quatro `ColorId` e a palavra pt-BR de cada um (`VERMELHO`, `VERDE`, `AZUL` e `AMARELO`). Também é feito na US-01.1, porque o `getCondition` usa essas palavras.
 - `game/blocks.ts`: os três blocos, `as const`, na ordem da sessão, com os valores provisórios abaixo.
 - `game/rng.ts`: `createRng(seed: number): () => number` (mulberry32).
 - `game/generator.ts`: `buildTrials(block: BlockConfig, rng): Stimulus[]`.
@@ -60,4 +61,4 @@ Existe uma função pura que, dado um bloco e uma semente, devolve a lista de es
 
 ## Arquivos prováveis
 
-- `src/game/types.ts`, `colors.ts`, `blocks.ts`, `rng.ts`, `generator.ts`, `generator.test.ts`
+- `src/game/types.ts`, `conditions.ts`, `conditions.test.ts`, `colors.ts`, `blocks.ts`, `rng.ts`, `generator.ts`, `generator.test.ts`

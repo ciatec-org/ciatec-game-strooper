@@ -16,6 +16,7 @@ src/
     sessionMachine.ts       máquina de estados da sessão (pura): telas e blocos
   game/                     PURO — sem React, sem DOM
     types.ts                ColorId, Condition, BlockId, Stimulus, TrialRecord…
+    conditions.ts           getCondition(word, inkColor) → Condition
     colors.ts               os 4 ColorId e a ordem fixa dos botões
     blocks.ts               os 3 blocos HARD-CODED (DD-14): tamanho, proporções, feedback
     generator.ts            buildTrials(block, rng) → Stimulus[]

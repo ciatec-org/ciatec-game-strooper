@@ -29,8 +29,12 @@ Ao fim desta spec, [visual-identity.md](../design/visual-identity.md) e [behavio
 1. **Paleta** (visual-identity.md §2.1 e §2.2): escolher fundo e as quatro cores de estímulo, conferir o contraste ≥ 4,5 : 1 (ferramenta: qualquer verificador de contraste WCAG) e testar na tela real com 3 pessoas: elas nomeiam as quatro cores sem hesitar?
 2. **Botões** (visual-identity.md §4.1; behaviors.md §3): arranjo (2 × 2 ou linha), ordem das cores, estados.
 3. **Feedback** (comportamentos §2): forma do acerto, do erro e da omissão; duração; em quais blocos.
-4. **Teclado** (comportamentos §4): as quatro teclas.
+
 5. **Tipografia da palavra-estímulo** (visual-identity.md §3).
+
+**Para depois de janeiro (não bloqueia a primeira versão):**
+
+4. **Teclado** (comportamentos §4): as quatro teclas.
 
 **Importante (bloqueia a SPEC-05):**
 
@@ -44,7 +48,7 @@ Ao fim desta spec, [visual-identity.md](../design/visual-identity.md) e [behavio
 
 **Ao fim:**
 
-10. Criar `src/theme/tokens.ts` com os valores ☑ (se a SPEC-01 ainda não acabou, deixar o conteúdo pronto no próprio documento).
+10. Passar os valores ☑ para `src/theme/tokens.ts`, substituindo os provisórios que a parte 1 da SPEC-01 criou.
 11. Registrar no GDD, pelo playbook [record-decision](../playbooks/record-decision.md), as escolhas que respondem itens da seção 15.
 
 ## Fora do escopo
@@ -54,7 +58,7 @@ Ao fim desta spec, [visual-identity.md](../design/visual-identity.md) e [behavio
 
 ## Critérios de aceite
 
-- [ ] Os itens 1 a 5 estão ☑ nos dois documentos, com data.
+- [ ] Os itens 1, 2, 3 e 5 estão ☑ nos dois documentos, com data (o 4, teclado, fica para depois de janeiro).
 - [ ] Toda cor de estímulo tem contraste ≥ 4,5 : 1 contra o fundo, com o valor anotado.
 - [ ] Nenhum estado da interface depende só de cor (conferir item a item em comportamentos §2 e §3).
 - [ ] Os wireframes das telas estão em `docs/design/figures/` (foto de papel vale).
