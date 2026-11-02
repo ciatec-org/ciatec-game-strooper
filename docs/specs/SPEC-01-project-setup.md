@@ -77,3 +77,11 @@ Ao fim das três partes, o repositório tem um projeto Vite + React + TypeScript
 - Parte 1: `package.json`, `vite.config.ts`, `tsconfig*.json`, `index.html`, `src/main.tsx`, `src/app/App.tsx`, `src/content/strings.ts`, `src/theme/tokens.ts`, `src/theme/global.css`
 - Parte 2: `vite.config.ts` (bloco `test`) ou `vitest.config.ts`, um `*.test.ts` de exemplo
 - Parte 3: `eslint.config.js`
+
+## Notas
+
+- **02/11/2026 — as três partes num PR só, para o orientador decidir.** A implementação começou pela versão anterior desta spec, em que o setup era uma entrega só, e já estava pronta quando a divisão em três partes chegou à `develop`. O PR traz as partes 1, 2 e 3 e também o `jsdom` e a Testing Library, previstos para depois de janeiro. As pastas de `src/` foram criadas de uma vez, com `.gitkeep`, e não à medida que ganham o primeiro arquivo. Fica com o orientador aceitar assim ou pedir para reduzir à parte 1.
+- **TypeScript 6.0, e não 7.** O modelo do Vite instala o TypeScript 7, mas o `typescript-eslint` só aceita até o 6.0 (`>=4.8.4 <6.1.0`). Para manter o ESLint da parte 3, o projeto fixa o `typescript@~6.0.3`.
+- **`typecheck` é `tsc -b`, e não `tsc --noEmit`.** O `tsconfig.json` da raiz só tem referências (`tsconfig.app.json` e `tsconfig.node.json`), e um `tsc --noEmit` nele não confere nenhum arquivo. Os dois projetos já têm `noEmit: true`. A tabela de comandos do `AGENTS.md` ainda diz `tsc --noEmit`.
+- **Tokens marcados com `TODO(SPEC-00)`.** Os valores de `tokens.ts` são as propostas ☐ da visual-identity.md, que o time decide na SPEC-00; a altura mínima do botão leva também `TODO(GDD-15.15)`. Nos tamanhos de fonte, a proposta é uma faixa, e foi escolhido um valor dentro dela (80 px, 22 px e 18 px). As convenções só preveem `TODO(GDD-15.N)`.
+- **Subtítulo provisório** "Jogo sério sobre o efeito Stroop", tirado do README, até a T-00.1.2.
