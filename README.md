@@ -60,10 +60,10 @@ AGENTS.md    instruções comuns aos agentes de IA
 
 ## Trabalhando no projeto
 
-1. Pegue uma task liberada no quadro (as tasks estão no [backlog](docs/backlog.md)) e crie uma branch para ela: `git checkout -b task-01-1-2-game-types`.
+1. Pegue uma task liberada no quadro (as tasks estão no [backlog](docs/backlog.md)) e crie uma branch para ela a partir da `develop` atualizada: `git checkout develop`, `git pull` e `git checkout -b task-01-1-2-game-types`.
 2. Faça a task, com commits pequenos **em inglês**: `feat(game): add trial generator`.
 3. Antes do pull request, rode `npm run typecheck && npm run lint && npm test` (os que já existem: o projeto ganha o `test` e o `lint` aos poucos, pela [SPEC-01](docs/specs/SPEC-01-project-setup.md)).
-4. Abra o PR citando a task, a história e a spec (ex.: `T-01.1.2 · US-01.1 · SPEC-02`). O colega revisa e faz o merge.
+4. Abra o PR para a `develop`, citando a task, a história e a spec (ex.: `T-01.1.2 · US-01.1 · SPEC-02`). O colega revisa e faz o merge.
 
 **Idioma:** nomes de pastas, arquivos, código, comentários e commits em **inglês**; conteúdo da documentação e textos de tela em **português**.
 

@@ -31,7 +31,7 @@ Cada história traz o perfil, as horas, a prioridade e o sprint; a história no 
 
 - cada cenário de aceite foi visto acontecer (no navegador ou no `npm test`);
 - `npm run typecheck`, `npm run lint` e `npm test` passam (cada um a partir de quando é instalado: `typecheck` na US-00.1, `test` com a B-05, antes do sprint 2, e `lint` na US-01.3). Os testes são escritos pelo orientador, na base (seção 1.4): os estudantes só os rodam, e um teste que quebra avisa que a mudança alterou uma regra do jogo;
-- o pull request foi revisado pelo colega e está no `main`.
+- o pull request foi revisado pelo colega e está na `develop`.
 
 ## 1.3 O ritmo
 

@@ -2,7 +2,7 @@
 
 **Quando usar:** para revisar um PR ou uma mudança local antes do PR, inclusive a sua.
 
-**Entrada:** a spec e o diff (`git diff main...HEAD`).
+**Entrada:** a spec e o diff (`git diff develop...HEAD`).
 
 ## Passos
 
