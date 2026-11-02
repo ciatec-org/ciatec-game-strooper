@@ -1,7 +1,7 @@
 ---
 id: SPEC-01
 titulo: Setup do projeto
-status: a fazer
+status: em andamento
 depende_de: []
 gdd: ["§11"]
 requisitos: [DD-11, DD-12, DD-14]

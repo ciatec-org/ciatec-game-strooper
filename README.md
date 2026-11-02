@@ -4,7 +4,7 @@
 
 O jogador vê uma palavra de cor escrita numa cor de tinta, como a palavra **AZUL** pintada de vermelho, e responde à **cor da tinta**, ignorando o que está escrito. Ler é automático; nomear a cor exige esforço. O jogo mede quanto a palavra atrapalha, em milissegundos.
 
-> **Status:** em desenvolvimento. O app jogável está previsto para **janeiro de 2027**. O código ainda não existe neste repositório; os comandos abaixo passam a valer depois do setup do projeto ([SPEC-01](docs/specs/SPEC-01-project-setup.md)).
+> **Status:** em desenvolvimento. O app jogável está previsto para **janeiro de 2027**. Por enquanto o projeto tem só a base ([SPEC-01](docs/specs/SPEC-01-project-setup.md)): a tela de início provisória, os testes, o lint e a checagem de tipos.
 
 ## Como o jogo funciona
 
@@ -22,20 +22,23 @@ A sessão tem três blocos: **treino**, **linha de base** e **Stroop**. Cada ten
 | --- | --- |
 | Interface | React + TypeScript |
 | Build e servidor local | Vite |
-| Testes | Vitest |
+| Testes | Vitest e Testing Library |
+| Qualidade do código | ESLint e TypeScript em modo `strict` |
 | Dados | Arquivo JSON local, sem backend |
 
 ## Rodar localmente
 
-Requisitos: Node.js LTS e npm.
+Requisitos: Node.js 22.13 ou mais novo, numa versão LTS (22, 24 ou 26), e npm.
 
 ```bash
 npm install
-npm run dev        # abre o jogo no navegador
-npm test           # roda os testes
-npm run lint       # confere o estilo do código
-npm run typecheck  # confere os tipos
-npm run build      # gera a versão final em dist/
+npm run dev         # abre o jogo no navegador (http://localhost:5173)
+npm test            # roda os testes uma vez
+npm run test:watch  # roda os testes de novo a cada arquivo salvo
+npm run lint        # confere o estilo do código
+npm run typecheck   # confere os tipos
+npm run build       # gera a versão final em dist/
+npm run preview     # serve a versão de dist/ para conferir
 ```
 
 ## Onde está cada coisa
@@ -52,7 +55,7 @@ npm run build      # gera a versão final em dist/
 
 ```
 docs/        documentação (conteúdo em português)
-src/         código (em inglês), criado no setup
+src/         código (em inglês)
 .claude/     skills do Claude Code
 .cursor/     regras e comandos do Cursor
 AGENTS.md    instruções comuns aos agentes de IA
