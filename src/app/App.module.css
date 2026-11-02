@@ -1,7 +1,9 @@
 .start {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: var(--layout-menu-gap);
   min-height: 100svh;
 }
 
@@ -9,4 +11,9 @@
   margin: 0;
   font-size: var(--font-stimulus-size);
   font-weight: var(--font-stimulus-weight);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: var(--font-menu-size);
 }

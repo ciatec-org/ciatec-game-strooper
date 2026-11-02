@@ -23,6 +23,7 @@ export const tokens = {
     // TODO(GDD-15.15): minimum target size until the audience is defined.
     buttonMinHeight: '56px',
     buttonGap: '16px',
+    menuGap: '16px',
   },
 } as const
 
@@ -43,4 +44,5 @@ export const cssVariables: Readonly<Record<string, string>> = {
   '--font-menu-size': tokens.font.menu.size,
   '--layout-button-min-height': tokens.layout.buttonMinHeight,
   '--layout-button-gap': tokens.layout.buttonGap,
+  '--layout-menu-gap': tokens.layout.menuGap,
 }
