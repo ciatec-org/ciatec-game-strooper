@@ -1,0 +1,12 @@
+.start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--font-stimulus-size);
+  font-weight: var(--font-stimulus-weight);
+}
