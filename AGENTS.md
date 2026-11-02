@@ -36,6 +36,7 @@ Não transforme toda resposta em aula, e não pergunte o que não muda nada.
 6. **Os nomes dos campos da telemetria são estáveis.** Mudar o JSON exige atualizar [docs/engineering/telemetry.md](docs/engineering/telemetry.md) e o `schema_version`.
 7. **Não invente decisão de produto.** Se o GDD marca algo como **[a definir]**, use o valor provisório da spec e marque o código com `// TODO(GDD-15.N): ...`, citando o item da seção 15 do GDD. Se não houver valor provisório, pare e pergunte.
 8. **O GDD é a fonte.** Se o código e o GDD divergem, o código está errado, ou o GDD precisa de uma decisão nova (playbook `record-decision`). Nunca corrija a divergência em silêncio.
+9. **O agente de IA não assina nada.** Commits, branches, PRs e comentários de código não levam o nome do assistente (Claude, Cursor, Copilot, ChatGPT…) como autor, coautor ou assinatura: sem trailer `Co-authored-by` de IA e sem "Generated with…". O autor é a pessoa que faz o commit. Ver [conventions.md](docs/engineering/conventions.md) §Git.
 
 ## Comandos
 
