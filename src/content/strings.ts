@@ -1,7 +1,7 @@
 export const strings = {
   start: {
     title: 'Strooper',
-    // Provisional: T-00.1.2 replaces it with a sentence that explains the Stroop effect.
-    subtitle: 'Jogo sério sobre o efeito Stroop',
+    subtitle:
+      'O efeito Stroop acontece quando precisamos dizer a cor em que uma palavra está escrita, mas o que está escrito nela acaba interferindo na nossa resposta.',
   },
 } as const
