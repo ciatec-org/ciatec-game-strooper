@@ -1,7 +1,7 @@
 ---
 id: SPEC-02
 titulo: Blocos hard-coded e gerador de estímulos
-status: a fazer
+status: em andamento
 depende_de: [SPEC-01]
 gdd: ["§2.1", "§2.4", "§6", "§12"]
 requisitos: [RF01, RF02, RNF04, DD-02, DD-06, DD-14]
