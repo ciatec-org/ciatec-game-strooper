@@ -77,4 +77,5 @@ O número é o item da seção 15 do GDD. Para listar as pendências: `grep -rn 
 - Uma branch por task do backlog, saindo da `develop` atualizada: `task-01-1-2-game-types`.
 - Commits pequenos, no formato `type(scope): summary`, em inglês: `feat(trial): measure RT from pointerdown timeStamp`. Os tipos são `feat`, `fix`, `refactor`, `test`, `docs` e `chore`.
 - O PR vai para a `develop`, cita a task, a história e a spec (`T-01.1.2 · US-01.1 · SPEC-02`) e marca os cenários de aceite atendidos.
+- O nome de um agente de IA não aparece como autor, coautor ou assinatura em commits, branches, PRs ou comentários de código. Não use trailers como `Co-authored-by: Cursor <cursoragent@cursor.com>` nem linhas como `Generated with Claude Code`. A documentação pode citar as ferramentas quando explica como usá-las (como no `AGENTS.md`).
 - Antes do PR, rode `npm run typecheck && npm run lint && npm test` (os que a [SPEC-01](../specs/SPEC-01-project-setup.md) já criou: `typecheck` na parte 1, `test` na parte 2, `lint` na parte 3).

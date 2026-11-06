@@ -11,6 +11,7 @@ React + TypeScript + Vite, só no navegador, sem backend. Este documento diz **o
 ```
 src/
   main.tsx                  entrada do Vite
+  setupTests.ts             preparação do Vitest: matchers do jest-dom e limpeza entre testes
   app/
     App.tsx                 troca de telas pelo estado da sessão
     sessionMachine.ts       máquina de estados da sessão (pura): telas e blocos
