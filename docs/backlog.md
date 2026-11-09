@@ -140,7 +140,7 @@ Cada estudo termina num arquivo real do jogo: nada é exercício jogado fora.
 | T-01.1.1 | TypeScript Handbook, "Everyday Types", até *union types*, testando no playground | 1 h cada um · estudo | — |
 | T-01.1.2 | Criar `ColorId`, `Condition` e `Stimulus` em `src/game/types.ts` (pode começar no *playground* antes de o projeto subir; ver §1.3) | 1 h · regras | T-00.1.1 (o rascunho no *playground* não depende) |
 | T-01.1.3 | Criar `src/game/colors.ts`: os quatro `ColorId` na ordem fixa dos botões e a palavra pt-BR de cada um (VERMELHO, VERDE, AZUL e AMARELO) | 0,5 h · regras | T-01.1.2 |
-| T-01.1.4 | Criar `getCondition(word, inkColor)` em `src/game/conditions.ts`, usando as palavras do `colors.ts` | 1 h · regras | T-01.1.3 |
+| T-01.1.4 | Criar `getCondition(word, inkColor)` em `src/game/conditions.ts`, usando as palavras do `colors.ts` | 1 h · regras | T-01.1.3, B-05 |
 
 ### US-01.3 — A palavra na tela
 

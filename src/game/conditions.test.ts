@@ -6,8 +6,8 @@ import { getCondition } from './conditions'
 // task lands. The task must export `getCondition` by name (not with `export default`).
 // If a test fails, fix `getCondition`; if a test itself looks wrong, stop and tell the advisor.
 
-// Spelled out here instead of imported from `colors.ts`, so that a typo in that table
-// fails these tests rather than being copied into the expected values.
+// Spelled out here instead of imported from `colors.ts`: `getCondition` must read that
+// table, so a typo in it fails these tests rather than being copied into the expected values.
 const COLOR_WORDS = [
   ['red', 'VERMELHO'],
   ['green', 'VERDE'],
