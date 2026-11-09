@@ -2,9 +2,9 @@
 doc: Backlog
 titulo: Strooper
 subtitulo: Plano de trabalho para uma dupla de pré-iniciação científica (ensino técnico)
-versao: v1.2
-data: 27/10/2026
-mudanca: "v1.2: correções da revisão — o M1 não depende do feedback (P3); a US-03.1 não depende mais do motor da tentativa (B-03), e o aceite dos botões fixos foi para a US-03.2; a US-00.1 passa a ser de uma pessoa só (3 h) e deixa de pedir a tela de instruções; a US-00.2 (Git em dupla) sai, porque os estudantes já usam Git, e o total cai para 38,5 h; quem não monta o projeto começa o sprint 1 pelo estudo; as tasks deixam de ter dono (A/B) — cada um escolhe, e estudo e revisão não viram cartão; o feedback segue a forma da oficina e cobre a omissão; jsdom e Testing Library saem da US-01.3; recesso até 19/jan; cada task diz do que depende (coluna Depende de), para o orientador liberar em paralelo o que pode andar junto; a escrita dos testes sai das tasks dos estudantes (a US-01.2 e as tasks de teste da US-02.1 e da US-04.1) e vai para a base (B-01, B-04 e a nova B-05), e o total cai para 32 h; o `colors.ts` passa para a US-01.1, antes do `getCondition`; as tasks marcadas "cada um" não viram cartão; os testes da base cobrem todos os critérios das specs; v1.1: a estudante A monta o projeto, aos poucos, a partir da SPEC-01 (US-00.1, US-01.2 e US-01.3); a B-01 fica só com o rng.ts; as horas passam de 38 h para 41,5 h, sem corte, e a previsão se refaz depois do sprint 2. v1.0: primeira versão."
+versao: v1.3
+data: 09/11/2026
+mudanca: "v1.3: a US-01.1 ganha o cenário de aceite dos testes do `getCondition` (B-05), como já têm a US-02.1 e a US-04.1; v1.2: correções da revisão — o M1 não depende do feedback (P3); a US-03.1 não depende mais do motor da tentativa (B-03), e o aceite dos botões fixos foi para a US-03.2; a US-00.1 passa a ser de uma pessoa só (3 h) e deixa de pedir a tela de instruções; a US-00.2 (Git em dupla) sai, porque os estudantes já usam Git, e o total cai para 38,5 h; quem não monta o projeto começa o sprint 1 pelo estudo; as tasks deixam de ter dono (A/B) — cada um escolhe, e estudo e revisão não viram cartão; o feedback segue a forma da oficina e cobre a omissão; jsdom e Testing Library saem da US-01.3; recesso até 19/jan; cada task diz do que depende (coluna Depende de), para o orientador liberar em paralelo o que pode andar junto; a escrita dos testes sai das tasks dos estudantes (a US-01.2 e as tasks de teste da US-02.1 e da US-04.1) e vai para a base (B-01, B-04 e a nova B-05), e o total cai para 32 h; o `colors.ts` passa para a US-01.1, antes do `getCondition`; as tasks marcadas "cada um" não viram cartão; os testes da base cobrem todos os critérios das specs; v1.1: a estudante A monta o projeto, aos poucos, a partir da SPEC-01 (US-00.1, US-01.2 e US-01.3); a B-01 fica só com o rng.ts; as horas passam de 38 h para 41,5 h, sem corte, e a previsão se refaz depois do sprint 2. v1.0: primeira versão."
 projeto_vinculado: Strooper
 organizacao: CIATec
 tipo: backlog
@@ -132,6 +132,7 @@ Cada estudo termina num arquivo real do jogo: nada é exercício jogado fora.
 
 - Dado a palavra AZUL em tinta vermelha, quando chamo `getCondition`, então ele devolve `'incongruent'`.
 - Dado XXXX em tinta verde, quando chamo `getCondition`, então ele devolve `'neutral'`.
+- Dado os testes do `getCondition` da base (B-05), quando rodo `npm test`, então todos passam.
 - Dado um `Stimulus` com uma cor inexistente, quando rodo `npm run typecheck`, então o TypeScript acusa o erro.
 
 | Task | O que fazer | Horas e camada | Depende de |
@@ -139,7 +140,7 @@ Cada estudo termina num arquivo real do jogo: nada é exercício jogado fora.
 | T-01.1.1 | TypeScript Handbook, "Everyday Types", até *union types*, testando no playground | 1 h cada um · estudo | — |
 | T-01.1.2 | Criar `ColorId`, `Condition` e `Stimulus` em `src/game/types.ts` (pode começar no *playground* antes de o projeto subir; ver §1.3) | 1 h · regras | T-00.1.1 (o rascunho no *playground* não depende) |
 | T-01.1.3 | Criar `src/game/colors.ts`: os quatro `ColorId` na ordem fixa dos botões e a palavra pt-BR de cada um (VERMELHO, VERDE, AZUL e AMARELO) | 0,5 h · regras | T-01.1.2 |
-| T-01.1.4 | Criar `getCondition(word, inkColor)` em `src/game/conditions.ts`, usando as palavras do `colors.ts` | 1 h · regras | T-01.1.3 |
+| T-01.1.4 | Criar `getCondition(word, inkColor)` em `src/game/conditions.ts`, usando as palavras do `colors.ts` | 1 h · regras | T-01.1.3, B-05 |
 
 ### US-01.3 — A palavra na tela
 
