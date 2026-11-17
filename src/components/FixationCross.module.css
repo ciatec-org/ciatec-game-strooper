@@ -1,0 +1,18 @@
+/* Same centering as StimulusWord: fills a positioned parent. */
+.root {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+}
+
+.mark {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--font-stimulus-size);
+  font-weight: var(--font-stimulus-weight);
+  line-height: 1;
+  text-align: center;
+  user-select: none;
+}
