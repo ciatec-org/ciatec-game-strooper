@@ -1,0 +1,37 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  padding: var(--layout-menu-gap);
+  box-sizing: border-box;
+}
+
+.stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+.next {
+  align-self: center;
+  min-height: var(--layout-button-min-height);
+  margin-top: var(--layout-menu-gap);
+  padding: 0 24px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--font-button-label-size);
+  font-weight: var(--font-button-label-weight);
+  cursor: pointer;
+}
+
+.next:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.next:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 3px;
+}
