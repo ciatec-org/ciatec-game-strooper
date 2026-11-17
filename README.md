@@ -68,7 +68,7 @@ AGENTS.md    instruções comuns aos agentes de IA
 3. Antes do pull request, rode `npm run typecheck && npm run lint && npm test` (os que já existem: o projeto ganha o `test` e o `lint` aos poucos, pela [SPEC-01](docs/specs/SPEC-01-project-setup.md)).
 4. Abra o PR para a `develop`, citando a task, a história e a spec (ex.: `T-01.1.2 · US-01.1 · SPEC-02`). O colega revisa e faz o merge.
 
-**Idioma:** nomes de pastas, arquivos, código, comentários e commits em **inglês**; conteúdo da documentação e textos de tela em **português**.
+**Idioma:** nomes de pastas, arquivos, código, comentários, commits e branches em **inglês**; conteúdo da documentação, textos de tela e títulos/corpos de PR em **português**.
 
 ## Com agentes de IA (Claude Code ou Cursor)
 

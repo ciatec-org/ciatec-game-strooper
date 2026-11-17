@@ -1,15 +1,12 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
-import { strings } from '../content/strings'
+import { COLOR_WORDS } from '../game/colors'
 import App from './App'
 
 describe('App', () => {
-  it('shows the game title and subtitle on the start screen', () => {
+  it('shows AZUL in red ink as the StimulusWord preview', () => {
     render(<App />)
 
-    expect(
-      screen.getByRole('heading', { level: 1, name: strings.start.title }),
-    ).toBeInTheDocument()
-    expect(screen.getByText(strings.start.subtitle)).toBeInTheDocument()
+    expect(screen.getByText(COLOR_WORDS.blue)).toBeInTheDocument()
   })
 })

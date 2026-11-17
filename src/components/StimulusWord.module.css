@@ -1,0 +1,18 @@
+/* Fills a positioned parent (test/block screen) and centers the word. */
+.root {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+}
+
+.word {
+  margin: 0;
+  font-size: var(--font-stimulus-size);
+  font-weight: var(--font-stimulus-weight);
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  user-select: none;
+}
