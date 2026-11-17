@@ -1,0 +1,20 @@
+---
+description: Títulos e corpos de PR em português do Brasil
+alwaysApply: true
+---
+
+# Pull requests
+
+- Título e corpo de todo PR são em **português do Brasil**.
+- O PR aponta para a `develop`, cita a task, a história e a spec (ex.: `T-01.3.2 · US-01.3 · SPEC-03`) e lista o plano de teste.
+- Commits e nomes de branch continuam em **inglês** (`type(scope): summary`), conforme `docs/engineering/conventions.md`.
+
+```markdown
+<!-- ❌ BAD -->
+## Summary
+- Add StimulusWord with ink color from tokens
+
+<!-- ✅ GOOD -->
+## Resumo
+- Adiciona o StimulusWord com a cor da tinta vinda dos tokens
+```
