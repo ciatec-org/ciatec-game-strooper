@@ -10,7 +10,7 @@ Cada spec é uma entrega pequena e verificável, derivada do GDD. O GDD diz **o 
 
 | Spec | Título | Depende de | Status |
 | --- | --- | --- | --- |
-| [SPEC-00](SPEC-00-visual-identity-and-behaviors.md) | Identidade visual e comportamentos | — | a fazer |
+| [SPEC-00](SPEC-00-visual-identity-and-behaviors.md) | Identidade visual e comportamentos | — | em andamento |
 | [SPEC-01](SPEC-01-project-setup.md) | Setup do projeto | — | em andamento |
 | [SPEC-02](SPEC-02-blocks-and-generator.md) | Blocos hard-coded e gerador de estímulos | 01 | em andamento |
 | [SPEC-03](SPEC-03-trial-cycle.md) | Ciclo da tentativa e timing | 01, 02 | a fazer |

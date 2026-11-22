@@ -14,12 +14,16 @@
 
 .title {
   margin: 0;
-  font-size: var(--font-stimulus-size);
-  font-weight: var(--font-stimulus-weight);
+  font-size: var(--font-title-size);
+  font-weight: var(--font-title-weight);
+  letter-spacing: -0.02em;
+  color: var(--color-text);
 }
 
 .subtitle {
   margin: 0;
   font-size: var(--font-menu-size);
+  font-weight: var(--font-menu-weight);
+  color: var(--color-text-muted);
   text-align: center;
 }

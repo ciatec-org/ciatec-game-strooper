@@ -2,9 +2,9 @@
 doc: GDD — Game Design Document
 titulo: Strooper
 subtitulo: Tarefa de Efeito Stroop, em fases, para estudo de controle inibitório e atenção seletiva
-versao: v0.4
-mudanca: pastas e arquivos do repositório em inglês (docs/product, design, engineering, references, specs, playbooks). v0.3: TypeScript; código em inglês e documentação em português; documentos reorganizados em docs/ (produto, design, engenharia, specs). v0.2: stack em React no navegador, sem backend; fases hard-coded e locais (DD-11, DD-12, DD-14). v0.1: primeira versão, derivada do documento de requisitos técnicos e conceito. Tudo que o documento-fonte não define está marcado como pendente (seção 15).
-data: 21/10/2026
+versao: v0.5
+mudanca: "v0.5: oficina SPEC-00 (22/11/2026) — forma e duração do feedback, em todos os blocos, e aviso de omissão (DD-09 revista; itens 9 e 10 da §15). v0.4: pastas e arquivos do repositório em inglês. v0.3: TypeScript; código em inglês e documentação em português. v0.2: React no navegador, sem backend; fases hard-coded (DD-11, DD-12, DD-14). v0.1: primeira versão."
+data: 22/11/2026
 projeto_vinculado: Strooper (serious game)
 organizacao: CIATec (contexto ilustrativo)
 triple_diamond: 1º Diamante — definição inicial, proposta
@@ -14,7 +14,7 @@ tipo: requisitos
 ids_externos: RF, RNF, RT
 status: rascunho
 data_criacao: 21/10/2026
-data_atualizacao: 21/10/2026
+data_atualizacao: 22/11/2026
 fonte: docs/product/source-requirements.md
 ---
 
@@ -183,15 +183,15 @@ Diferente do Caça às Cores, o Strooper **não tem fases que se liberam**. Os t
 
 **O feedback informa e não pune** (DD-09). Acerto e erro são curtos, e o próximo estímulo não espera por eles além do necessário.
 
-| Evento | Retorno proposto | Duração |
+| Evento | Retorno | Duração |
 | --- | --- | --- |
-| Acerto | Contorno no botão escolhido, sem cor | **[a definir]**; recomendação até 300 ms |
-| Erro | Contorno e um ícone neutro (por exemplo, um traço), sem cor e sem som punitivo | **[a definir]**; recomendação até 300 ms |
-| Omissão | Texto "Responda mais rápido" ou nada | **[a definir]** |
+| Acerto | Contorno grosso (3 px) no botão escolhido, sem cor | 300 ms (DD-09) |
+| Erro | Contorno tracejado e ícone neutro (—), sem cor e sem som punitivo | 300 ms (DD-09) |
+| Omissão | Texto discreto "Mais rápido" | 500 ms (DD-09) |
 
-O RF07 pede feedback "sutil". Se o feedback for mesmo sonoro, o som deve ser curto e suave.
+O RF07 pede feedback "sutil". Não há áudio na tarefa (DD-10).
 
-**[a definir]:** se o feedback existe em todos os blocos ou só no treino. Os dois são válidos, e a escolha muda a interpretação do erro (seção 15).
+**Feedback em todos os blocos** (treino, linha de base e Stroop), com a mesma forma breve (DD-09). O flag por bloco fica em `game/blocks.ts`.
 
 # 9 ARTE E DIREÇÃO VISUAL
 
@@ -305,7 +305,7 @@ Sem mudar os campos da fonte, este GDD propõe (DD-13):
 
 **DD-08 — O participante não vê os números.** **Proposta**, como o Caça às Cores (DD-29 daquele GDD).
 
-**DD-09 — Feedback que informa e não pune.** Fonte, RF07. Forma e duração do feedback em aberto.
+**DD-09 — Feedback que informa e não pune.** Fonte, RF07. Revista em 22/11/2026 (oficina SPEC-00 / B-02, decisão do orientador): acerto = contorno grosso 3 px; erro = contorno tracejado + "—"; omissão = "Mais rápido" por 500 ms; acerto e erro duram 300 ms; feedback nos três blocos; sem som. Aplica-se às seções 8 e 15 (itens 9 e 10). Detalhes em `docs/design/behaviors.md` e `src/theme/tokens.ts`.
 
 **DD-10 — Sem áudio na tarefa principal.** **Proposta**, em recomendação. Fonte não define áudio.
 
@@ -334,8 +334,8 @@ Cada item abaixo é uma pergunta para o pesquisador ou o orientador. Enquanto n�
 6. **Ordem dos blocos:** fixa, como na fonte, ou contrabalanceada? Com ordem fixa, a prática entra na interferência.
 7. **O treino:** tem feedback? Conta para algum indicador?
 8. **Repetir a mesma resposta correta seguida:** permitido ou não?
-9. **Feedback:** em todos os blocos, ou só no treino? Duração?
-10. **Omissão:** o participante recebe algum aviso?
+9. ~~**Feedback:** em todos os blocos, ou só no treino? Duração?~~ — resolvido em 22/11/2026: em todos os blocos; acerto/erro 300 ms (DD-09).
+10. ~~**Omissão:** o participante recebe algum aviso?~~ — resolvido em 22/11/2026: texto "Mais rápido" por 500 ms (DD-09).
 
 ## 15.3 Sobre a interface e a acessibilidade
 
@@ -364,7 +364,7 @@ Os resumos em `docs/references/summaries/` trazem evidência para várias pendê
 | 5 (neutra) | A neutra deve entrar também no bloco Stroop, para medir no mesmo contexto (Di Russo e Bianco, 2023; MacLeod, 1991). XXXX infla a interferência em cerca de 65 ms em relação a palavras comuns (MacLeod, 1991). Di Russo e Bianco usaram palavras comuns com o mesmo comprimento |
 | 6 (ordem) | A prática reduz a interferência, sobretudo com resposta manual (MacLeod, 1991). Di Russo e Bianco sortearam a ordem dos blocos entre participantes |
 | 8 (sequência) | Além do par idêntico, a relação entre a palavra de uma tentativa e a cor da seguinte muda o RT (MacLeod, 1991) |
-| 9 (feedback) | Feedback e pontos a cada tentativa não prejudicaram o efeito Stroop em adultos (Wiley et al., 2024) |
+| 9 (feedback) | Resolvido em 22/11/2026 (DD-09). Evidência: feedback e pontos a cada tentativa não prejudicaram o efeito Stroop em adultos (Wiley et al., 2024) |
 | 11 (daltonismo) | O daltonismo distorce o desempenho sem relação com a inibição (Scarpina e Tagini, 2017) |
 | 19 (SIE) | Incongruente − congruente mistura facilitação e interferência; recomenda-se também incongruente − neutra (MacLeod, 1991; Di Russo e Bianco, 2023). Scarpina e Tagini sugerem considerar também os erros |
 
@@ -397,7 +397,7 @@ Como a fonte define os requisitos, esta tabela só diz onde cada um aparece nest
 | RF04 | Tempo máximo e omissão | 2.3, 12 | Feito |
 | RF05 | Intervalo com cruz de 200 a 500 ms | 2.3, 12 | Feito |
 | RF06 | Média de RT e SIE | 13.2 | Feito, com ressalva da neutra |
-| RF07 | Feedback mínimo, sem animação longa | 8 | Parcial: forma em aberto |
+| RF07 | Feedback mínimo, sem animação longa | 8 | Feito (DD-09 revista em 22/11/2026) |
 | RNF01 | Precisão temporal | 11 | Feito: `performance.now()` |
 | RNF02 | Botões fixos | 7.1 | Feito |
 | RNF03 | Interface neutra nos blocos | 7.1, 9.1 | Feito |

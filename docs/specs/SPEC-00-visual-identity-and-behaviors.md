@@ -1,7 +1,7 @@
 ---
 id: SPEC-00
 titulo: Identidade visual e comportamentos
-status: a fazer
+status: em andamento
 depende_de: []
 gdd: ["§2.2", "§3", "§7", "§8", "§9", "§15.3"]
 requisitos: [RNF02, RNF03, RNF04, RF07, DD-04, DD-08, DD-09]
@@ -58,12 +58,16 @@ Ao fim desta spec, [visual-identity.md](../design/visual-identity.md) e [behavio
 
 ## Critérios de aceite
 
-- [ ] Os itens 1, 2, 3 e 5 estão ☑ nos dois documentos, com data (o 4, teclado, fica para depois de janeiro).
-- [ ] Toda cor de estímulo tem contraste ≥ 4,5 : 1 contra o fundo, com o valor anotado.
-- [ ] Nenhum estado da interface depende só de cor (conferir item a item em comportamentos §2 e §3).
+- [x] Os itens 1, 2, 3 e 5 estão ☑ nos dois documentos, com data (o 4, teclado, fica para depois de janeiro). — 22/11/2026
+- [x] Toda cor de estímulo tem contraste ≥ 4,5 : 1 contra o fundo, com o valor anotado.
+- [x] Nenhum estado da interface depende só de cor (conferir item a item em comportamentos §2 e §3).
 - [ ] Os wireframes das telas estão em `docs/design/figures/` (foto de papel vale).
-- [ ] O orientador aprovou (anotar a data no topo de visual-identity.md).
-- [ ] As decisões que respondem à seção 15 do GDD foram registradas lá.
+- [x] O orientador aprovou (anotar a data no topo de visual-identity.md). — 22/11/2026
+- [x] As decisões que respondem à seção 15 do GDD foram registradas lá. — itens 9 e 10 (DD-09)
+
+## Notas
+
+- 22/11/2026: essenciais (paleta, botões 2×2, feedback, tipografia) e `tokens.ts` fechados na B-02. Wireframes (§5) e textos de tela (§7) ainda abertos; não bloqueiam T-03.1.2.
 
 ## Arquivos prováveis
 

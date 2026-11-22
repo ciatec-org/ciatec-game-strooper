@@ -1,6 +1,6 @@
 # Identidade visual
 
-> **Status: rascunho. É preenchido pelo time na [SPEC-00](../specs/SPEC-00-visual-identity-and-behaviors.md).** O que já vem do GDD está marcado como **regra**. O que o time decide aparece como **☐ a decidir**, com uma proposta de partida quando houver. Quando o time decide, troca o ☐ por ☑, anota a data e passa o valor para `src/theme/tokens.ts`.
+> **Status: essenciais aprovados pelo orientador em 22/11/2026 (SPEC-00 / B-02).** Itens 1, 2 e 5 da SPEC-00 estão ☑. Teclado, daltonismo, wireframes e textos de tela ficam para depois. Valores em `src/theme/tokens.ts`.
 
 ## 1 Princípios (regra)
 
@@ -8,7 +8,7 @@
 - **A cor é o estímulo.** Nenhum estado da interface (acerto, erro, foco, desabilitado) se indica só pela cor (GDD §7.1).
 - **Os botões de resposta não mudam de lugar** durante a sessão (RNF02).
 - **Os botões trazem o nome da cor em texto, sobre fundo neutro** (DD-04). MacLeod (1991, p. 21 do PDF) indica que botões com o nome escrito preservam mais interferência do que botões com manchas de cor.
-- **Os menus** (início, configurações, resultado) podem ter mais personalidade que os blocos. ☐ a decidir: se seguem o visual dos menus CIATEC, como no Caça às Cores.
+- **Os menus** (início, configurações, resultado) podem ter mais personalidade que os blocos. ☑ **Tema escuro CIATEC** (22/11/2026): fundo frio escuro, tipografia sans-serif pesada, acento dourado no título e CTA em azul de marca (`brand.primary` / `brand.accent`). As cores dos cards da peça de referência **não** viram tinta de estímulo.
 
 ## 2 Paleta
 
@@ -23,27 +23,31 @@ As cores puras **não servem** em nenhum fundo. Contraste calculado pela WCAG, c
 | `#0000FF` | 8,59 ✓ | 2,44 ✗ | 1,94 ✗ |
 | `#FFFF00` | 1,07 ✗ | 19,56 ✓ | 15,52 ✓ |
 
-**Proposta de partida (fundo escuro), ☐ a decidir:**
+**☑ Aprovado em 22/11/2026 (modelo escuro); fundo de bloco atualizado no mesmo dia para navy frio `#121820`:**
 
-| Token | Cor | Hex | Contraste em `#1E1E1E` |
+| Token | Cor | Hex | Contraste em `#121820` (aprox.) |
 | --- | --- | --- | --- |
-| `color.ink.red` | Vermelho | `#FF6B61` | 5,98 |
-| `color.ink.green` | Verde | `#2FD160` | 8,26 |
-| `color.ink.blue` | Azul | `#6E9BFF` | 6,19 |
-| `color.ink.yellow` | Amarelo | `#FFD43B` | 11,70 |
+| `color.ink.red` | Vermelho | `#FF6B61` | ≥ 5,5 |
+| `color.ink.green` | Verde | `#2FD160` | ≥ 8 |
+| `color.ink.blue` | Azul | `#6E9BFF` | ≥ 6 |
+| `color.ink.yellow` | Amarelo | `#FFD43B` | ≥ 11 |
 
-O time ainda precisa conferir na tela real se as quatro são **nomeadas sem hesitação** pelo público (o azul claro não pode parecer roxo ou ciano, e o vermelho claro não pode parecer laranja ou rosa).
+Conferir na tela real, com 3 pessoas do público, se as quatro são nomeadas sem hesitação (o azul não pode parecer roxo ou ciano; o vermelho não pode parecer laranja ou rosa).
 
-### 2.2 Neutros
+### 2.2 Neutros e marca (modelo escuro)
 
-| Token | Uso | Proposta | ☐ |
+| Token | Uso | Valor | ☐ |
 | --- | --- | --- | --- |
-| `color.bg` | Fundo dos blocos | `#1E1E1E` | ☐ |
-| `color.surface` | Botão de resposta | `#3A3A3A` | ☐ |
-| `color.border` | Borda do botão (≥ 3 : 1 contra o fundo) | `#8A8A8A` (4,83) | ☐ |
-| `color.text` | Texto de interface e da cruz | `#F2F2F2` (10,16 sobre `#3A3A3A`) | ☐ |
+| `color.bg` | Fundo dos blocos e da app | `#121820` | ☑ 22/11/2026 |
+| `color.surface` | Botão de resposta / painel | `#1E2A36` | ☑ 22/11/2026 |
+| `color.surfaceRaised` | Controles de menu elevados | `#2A3A4A` | ☑ 22/11/2026 |
+| `color.border` | Borda (≥ 3 : 1 contra o fundo) | `#5A6B7C` | ☑ 22/11/2026 |
+| `color.text` | Texto de interface e da cruz | `#F0F4F8` | ☑ 22/11/2026 |
+| `color.textMuted` | Eyebrow / texto secundário de menu | `#9AABBA` | ☑ 22/11/2026 |
+| `color.brand.primary` | CTA de menu (não é estímulo) | `#40B4E5` | ☑ 22/11/2026 |
+| `color.brand.accent` | Destaque de título de menu | `#C9A227` | ☑ 22/11/2026 |
 
-☐ **Fundo claro ou escuro?** Com fundo branco, o amarelo e o verde exigiriam tons escuros, que se afastam do nome da cor. Por isso a proposta é escura.
+☑ **Modelo escuro em toda a app** (22/11/2026), inclusive menus. Fundo claro da peça CIATEC ficou só como referência de tipografia e acentos; nos blocos a tela continua neutra (RNF03).
 
 ### 2.3 Daltonismo (RNF04): ☐ a decidir, com o pesquisador
 
@@ -57,12 +61,14 @@ A escolha registrada no GDD é feita pelo playbook `record-decision`.
 
 ## 3 Tipografia
 
-| Elemento | Regra | Proposta | ☐ |
+| Elemento | Regra | Valor | ☐ |
 | --- | --- | --- | --- |
-| Palavra-estímulo | Maiúsculas, sem serifa, **o mesmo tamanho e peso em todos os estímulos** (GDD §9.1) | Fonte do sistema ou uma fonte self-hosted (sem CDN), peso 700, 64–96 px | ☐ |
+| Palavra-estímulo | Maiúsculas, sem serifa, **o mesmo tamanho e peso em todos os estímulos** (GDD §9.1) | Fonte do sistema, peso 700, 80 px | ☑ 22/11/2026 |
 | Neutra | O mesmo comprimento médio das palavras de cor | ☐ "XXXX" ou palavras comuns (GDD §15.2, item 5) | ☐ |
-| Rótulo dos botões | Maiúsculas, legível a ~30 cm | 20–24 px, peso 600 | ☐ |
-| Textos de menu | — | 16–20 px | ☐ |
+| Rótulo dos botões | Maiúsculas, legível a ~30 cm | 22 px, peso 600 | ☑ 22/11/2026 |
+| Textos de menu | Sans-serif limpa | 18 px, peso 400 | ☑ 22/11/2026 |
+| Título de menu | Sans-serif pesada (inspiração CIATEC) | 40 px, peso 800; accent em `brand.accent` | ☑ 22/11/2026 |
+| Eyebrow de menu | Maiúsculas, discreto | 12 px, peso 600, `textMuted` | ☑ 22/11/2026 |
 
 A fonte é carregada **antes** do primeiro bloco (ver [timing.md](../engineering/timing.md)).
 
@@ -86,9 +92,9 @@ A fonte é carregada **antes** do primeiro bloco (ver [timing.md](../engineering
 └──────────────────────────────┘
 ```
 
-☐ **Arranjo dos botões:** grade 2 × 2 (proposta, cabe em retrato e paisagem) ou uma linha de 4 (casa com as teclas do teclado). A ordem dos botões é **fixa** e definida em `game/colors.ts`.
+☑ **Arranjo dos botões:** grade 2 × 2 (22/11/2026). A ordem dos botões é **fixa** e definida em `game/colors.ts` (vermelho, verde, azul, amarelo).
 
-☐ **Ordem das cores nos botões:** fixa para todos ou sorteada por participante (fixa na sessão)? Pergunta para o pesquisador.
+☑ **Ordem das cores nos botões:** fixa para todos os participantes (22/11/2026).
 
 ### 4.2 Medidas (proposta, do GDD §7.4)
 
@@ -114,4 +120,4 @@ Ver o fluxo no GDD §7.3. Para cada tela, o time desenha um wireframe simples (p
 
 ## 6 Tokens
 
-Ao fim da SPEC-00, `src/theme/tokens.ts` contém todos os valores ☑ deste documento, e nenhum componente usa cor ou medida fora dele.
+`src/theme/tokens.ts` contém os valores ☑ deste documento (paleta, tipografia, layout 2×2 e tempos de feedback). Nenhum componente usa cor ou medida fora dele.
