@@ -1,0 +1,63 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`buildSessionJson > matches the telemetry.md field names (snapshot) 1`] = `
+{
+  "app_version": "0.0.0",
+  "frame_interval_ms": 16.7,
+  "player_id": "P-014",
+  "schema_version": 1,
+  "session_id": "11111111-2222-4333-8444-555555555555",
+  "settings": {
+    "colorblind_mode": false,
+    "rng_seed": 123456789,
+  },
+  "summary": {
+    "by_block": {
+      "baseline": {
+        "facilitation_vs_neutral_ms": null,
+        "interference_vs_neutral_ms": null,
+        "mean_rt_congruent_ms": 500,
+        "mean_rt_incongruent_ms": null,
+        "mean_rt_neutral_ms": null,
+        "stroop_interference_effect_ms": null,
+        "total_correct": 1,
+        "total_errors": 0,
+        "total_omissions": 0,
+        "total_trials": 1,
+      },
+    },
+    "facilitation_vs_neutral_ms": null,
+    "interference_vs_neutral_ms": null,
+    "mean_rt_congruent_ms": 500,
+    "mean_rt_incongruent_ms": null,
+    "mean_rt_neutral_ms": null,
+    "stroop_interference_effect_ms": null,
+    "total_correct": 1,
+    "total_errors": 0,
+    "total_omissions": 0,
+    "total_trials": 1,
+  },
+  "timestamp": "2026-10-21T18:45:00Z",
+  "trials": [
+    {
+      "block": "baseline",
+      "block_type": "congruent",
+      "color_displayed": "#FF6B61",
+      "condition": "congruent",
+      "correct_response": "VERMELHO",
+      "index_in_block": 1,
+      "is_correct": true,
+      "isi_ms": 300,
+      "player_response": "VERMELHO",
+      "response_at_ms": 1500,
+      "response_device": "pointer",
+      "response_time_ms": 500,
+      "stimulus_onset_ms": 1000,
+      "text_displayed": "VERMELHO",
+      "timed_out": false,
+      "trial_index": 1,
+      "visibility_lost": false,
+    },
+  ],
+}
+`;
