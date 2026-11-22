@@ -1,7 +1,7 @@
 ---
 id: SPEC-04
 titulo: Botões de resposta e teclado
-status: a fazer
+status: em andamento
 depende_de: [SPEC-00, SPEC-03]
 gdd: ["§2.2", "§3", "§7.1"]
 requisitos: [RF03, RNF02, DD-04]
@@ -38,6 +38,10 @@ O participante responde tocando um dos quatro botões com o nome da cor, ou aper
 - [ ] Nenhum `onClick` em `ResponseButtons` e em `useResponseInput`.
 - [ ] Os botões funcionam no toque (celular ou tablet) e no mouse.
 - [ ] Os botões têm foco visível ao usar Tab.
+
+## Notas
+
+- 22/11/2026 (T-03.1.2): `ResponseButtons` com grade 2×2, `onPointerDown` e prop `onResponse(color, timeStamp)`. Na `TrialCycleTestScreen`, a prop faz `console.log` do rótulo e do `timeStamp` (aceite da US-03.1). `keymap` e `useResponseInput` ficam para depois de janeiro; testes do componente idem (SPEC-01).
 
 ## Arquivos prováveis
 

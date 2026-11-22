@@ -34,33 +34,6 @@
   color: var(--color-text-muted);
 }
 
-.buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--layout-button-gap);
-}
-
-.button {
-  min-height: var(--layout-button-min-height);
-  border: 2px solid var(--color-border);
-  border-radius: var(--layout-radius);
-  background: var(--color-surface);
-  color: var(--color-text);
-  font-size: var(--font-button-label-size);
-  font-weight: var(--font-button-label-weight);
-  cursor: pointer;
-}
-
-.button:disabled {
-  cursor: default;
-  opacity: 0.5;
-}
-
-.button:focus-visible {
-  outline: 2px solid var(--color-text);
-  outline-offset: 3px;
-}
-
 .log {
   margin: 0;
   padding-left: 1.2rem;

@@ -14,7 +14,7 @@ Cada spec é uma entrega pequena e verificável, derivada do GDD. O GDD diz **o 
 | [SPEC-01](SPEC-01-project-setup.md) | Setup do projeto | — | em andamento |
 | [SPEC-02](SPEC-02-blocks-and-generator.md) | Blocos hard-coded e gerador de estímulos | 01 | em andamento |
 | [SPEC-03](SPEC-03-trial-cycle.md) | Ciclo da tentativa e timing | 01, 02 | em andamento |
-| [SPEC-04](SPEC-04-response-input.md) | Botões de resposta e teclado | 00, 03 | a fazer |
+| [SPEC-04](SPEC-04-response-input.md) | Botões de resposta e teclado | 00, 03 | em andamento |
 | [SPEC-05](SPEC-05-screens-and-flow.md) | Telas e fluxo da sessão | 00, 03, 04 | a fazer |
 | [SPEC-06](SPEC-06-feedback.md) | Feedback de acerto, erro e omissão | 00, 04 | a fazer |
 | [SPEC-07](SPEC-07-telemetry.md) | Telemetria, cálculos e exportação | 02, 03 | a fazer |

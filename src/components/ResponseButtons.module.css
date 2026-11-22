@@ -1,0 +1,32 @@
+/* 2×2 pad; order is DOM order from COLOR_ORDER (RNF02). No :hover in blocks. */
+.root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--layout-button-gap);
+}
+
+.button {
+  min-height: var(--layout-button-min-height);
+  border: 2px solid var(--color-border);
+  border-radius: var(--layout-radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--font-button-label-size);
+  font-weight: var(--font-button-label-weight);
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  transition:
+    transform calc(var(--timing-button-press-ms) * 1ms),
+    filter calc(var(--timing-button-press-ms) * 1ms);
+}
+
+.button:active {
+  transform: translateY(2px);
+  filter: brightness(0.85);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 3px;
+}
