@@ -1,7 +1,7 @@
 ---
 id: SPEC-03
 titulo: Ciclo da tentativa e timing
-status: a fazer
+status: em andamento
 depende_de: [SPEC-01, SPEC-02]
 gdd: ["§2.3", "§12"]
 requisitos: [RF04, RF05, RNF01, RNF03]
@@ -40,7 +40,7 @@ Um bloco roda tentativa após tentativa: cruz de fixação, palavra colorida at�
 | --- | --- | --- |
 | Tempo máximo | 1500 ms | Fonte (RF04), confirmar em piloto |
 | Intervalo | 200–500 ms, uniforme | Fonte (RF05) |
-| Feedback | Fase existe, com duração de `tokens`; conteúdo na SPEC-06 | `TODO(GDD-15.9)` |
+| Feedback | Fase existe, duração em `tokens.timing.feedbackMs` (DD-09); conteúdo visual na SPEC-06 | — |
 
 ## Fora do escopo
 
@@ -49,11 +49,15 @@ Um bloco roda tentativa após tentativa: cruz de fixação, palavra colorida at�
 
 ## Critérios de aceite
 
-- [ ] Testes do reducer com tempos fixos: resposta certa, errada, omissão, resposta exatamente no prazo, resposta durante a fixação (ignorada), segunda resposta (ignorada).
-- [ ] Teste do hook com `vi.useFakeTimers()`: o intervalo fica sempre em [200, 500], e o timeout dispara em 1500 ms após o início.
-- [ ] Nenhum `Date.now()` e nenhum `onClick` no caminho da resposta (`grep`).
+- [x] Testes do reducer com tempos fixos: resposta certa, errada, omissão, resposta exatamente no prazo, resposta durante a fixação (ignorada), segunda resposta (ignorada).
+- [x] Teste do hook com `vi.useFakeTimers()`: o intervalo fica sempre em [200, 500], e o timeout dispara em 1500 ms após o início.
+- [x] Nenhum `Date.now()` e nenhum `onClick` no caminho da resposta (`grep`).
 - [ ] No navegador, com o DevTools na aba Performance, não há tarefa longa (> 50 ms) entre o início da fixação e a resposta.
-- [ ] Desmontar a tela no meio de uma tentativa não deixa timer rodando (sem erro no console).
+- [x] Desmontar a tela no meio de uma tentativa não deixa timer rodando (sem erro no console).
+
+## Notas
+
+- 22/11/2026 (B-03): `clock`, `onset`, `trialMachine`, `useTrialRunner` e tela provisória `TrialCycleTestScreen`. Conteúdo visual do feedback e `ResponseButtons` ficam nas tasks da dupla.
 
 ## Arquivos prováveis
 

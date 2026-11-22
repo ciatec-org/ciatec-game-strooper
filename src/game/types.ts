@@ -19,3 +19,23 @@ export interface BlockConfig {
   feedback: boolean
   scores: boolean
 }
+
+/** How the participant answered; keyboard arrives with SPEC-04. */
+export type ResponseDevice = 'pointer' | 'keyboard'
+
+/**
+ * One completed trial, before JSON export (SPEC-07 maps names to snake_case).
+ * Times are ms on the performance timeline (session-relative at export).
+ */
+export interface TrialRecord {
+  stimulus: Stimulus
+  isiMs: number
+  stimulusOnsetMs: number
+  responseAtMs: number | null
+  responseTimeMs: number | null
+  playerResponse: ColorId | null
+  isCorrect: boolean
+  timedOut: boolean
+  responseDevice: ResponseDevice
+  visibilityLost: boolean
+}

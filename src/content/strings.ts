@@ -7,4 +7,9 @@ export const strings = {
   stimulusTest: {
     next: 'Próxima',
   },
+  trialCycle: {
+    hint: 'Tela provisória do ciclo (B-03) — toque na cor da tinta',
+    done: 'Bloco de teste concluído',
+    buttons: 'Cores de resposta',
+  },
 } as const

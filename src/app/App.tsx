@@ -1,8 +1,8 @@
-import { StimulusTestScreen } from '../screens/StimulusTestScreen'
+import { TrialCycleTestScreen } from '../screens/TrialCycleTestScreen'
 
-// Temporary entry for US-01.3; session navigation arrives with SPEC-05.
+// Temporary entry for B-03 / SPEC-03; BlockScreen + session flow replace this later.
 function App() {
-  return <StimulusTestScreen />
+  return <TrialCycleTestScreen />
 }
 
 export default App
