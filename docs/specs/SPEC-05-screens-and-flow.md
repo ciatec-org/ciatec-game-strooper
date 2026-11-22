@@ -1,7 +1,7 @@
 ---
 id: SPEC-05
 titulo: Telas e fluxo da sessão
-status: a fazer
+status: em andamento
 depende_de: [SPEC-00, SPEC-03, SPEC-04]
 gdd: ["§5.1", "§7.3"]
 requisitos: [RF01, RNF03, DD-02, DD-08]
@@ -36,11 +36,15 @@ A sessão vai do início ao resultado: início, configurações (código do part
 
 ## Critérios de aceite
 
-- [ ] Teste do `sessionMachine`: a sequência completa de telas, e "Começar" bloqueado sem código.
-- [ ] Jogando no navegador, a sessão vai do início ao resultado sem erro no console.
-- [ ] Os blocos aparecem na ordem de `blocks.ts`; mudar a ordem no array muda a sessão.
-- [ ] Nenhuma tela de bloco tem elemento animado ou decorativo (RNF03).
-- [ ] O resultado não mostra números.
+- [x] Teste do `sessionMachine`: a sequência completa de telas, e "Começar" bloqueado sem código.
+- [ ] Jogando no navegador, a sessão vai do início ao resultado sem erro no console. — esqueleto com `BlockScreenStub` (B-04); BlockScreen real na T-03.2.1
+- [x] Os blocos aparecem na ordem de `blocks.ts`; mudar a ordem no array muda a sessão.
+- [x] Nenhuma tela de bloco tem elemento animado ou decorativo (RNF03).
+- [x] O resultado não mostra números.
+
+## Notas
+
+- 22/11/2026 (B-04): `sessionMachine`, telas-esqueleto e `BlockScreenStub`. A dupla troca o stub pelo `BlockScreen` e liga telemetria (T-04.2.x).
 
 ## Arquivos prováveis
 

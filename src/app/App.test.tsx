@@ -1,49 +1,50 @@
-import { act, render, screen } from '@testing-library/react'
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { fireEvent, render, screen } from '@testing-library/react'
+import { describe, expect, it } from 'vitest'
 import { strings } from '../content/strings'
-import { COLOR_WORDS } from '../game/colors'
 import App from './App'
 
-/** Match useTrialRunner: two rAF ticks via fake timers. */
-function stubAnimationFrame() {
-  vi.stubGlobal(
-    'requestAnimationFrame',
-    (cb: FrameRequestCallback): number => {
-      return setTimeout(() => {
-        cb(performance.now())
-      }, 16) as unknown as number
-    },
-  )
-  vi.stubGlobal('cancelAnimationFrame', (id: number) => {
-    clearTimeout(id)
-  })
-}
-
-describe('App', () => {
-  beforeEach(() => {
-    vi.useFakeTimers()
-    stubAnimationFrame()
-  })
-
-  afterEach(() => {
-    vi.unstubAllGlobals()
-    vi.useRealTimers()
-  })
-
-  it('starts on fixation, then shows a stimulus and response buttons', async () => {
+describe('App session shell', () => {
+  it('blocks starting a session without a participant code', () => {
     render(<App />)
 
-    expect(screen.getByText('+')).toBeInTheDocument()
-    expect(screen.getByText(strings.trialCycle.hint)).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: strings.start.begin }))
+    fireEvent.click(
+      screen.getByRole('button', { name: strings.setup.startSession }),
+    )
 
-    await act(async () => {
-      await vi.advanceTimersByTimeAsync(500)
-      await vi.advanceTimersByTimeAsync(16)
-      await vi.advanceTimersByTimeAsync(16)
+    expect(
+      screen.getByText(strings.setup.participantCodeRequired),
+    ).toBeInTheDocument()
+    expect(screen.getByText(strings.setup.title)).toBeInTheDocument()
+  })
+
+  it('walks from start to result through the block stubs', () => {
+    render(<App />)
+
+    fireEvent.click(screen.getByRole('button', { name: strings.start.begin }))
+    fireEvent.change(screen.getByLabelText(strings.setup.participantCode), {
+      target: { value: 'P-014' },
     })
+    fireEvent.click(
+      screen.getByRole('button', { name: strings.setup.startSession }),
+    )
+    fireEvent.click(
+      screen.getByRole('button', { name: strings.instructions.continue }),
+    )
 
-    expect(screen.getAllByText(COLOR_WORDS.blue).length).toBeGreaterThanOrEqual(1)
-    expect(screen.getByRole('button', { name: COLOR_WORDS.red })).toBeInTheDocument()
-    expect(screen.queryByText('+')).not.toBeInTheDocument()
+    // practice → baseline → stroop
+    for (let i = 0; i < 3; i += 1) {
+      fireEvent.click(
+        screen.getByRole('button', { name: strings.block.stubComplete }),
+      )
+      if (i < 2) {
+        fireEvent.click(
+          screen.getByRole('button', { name: strings.transition.continue }),
+        )
+      }
+    }
+
+    expect(screen.getByText(strings.result.done)).toBeInTheDocument()
+    expect(screen.queryByText(/\d/)).not.toBeInTheDocument()
   })
 })

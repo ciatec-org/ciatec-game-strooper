@@ -1,0 +1,105 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--layout-menu-gap);
+  min-height: 100svh;
+  padding: var(--layout-menu-gap);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-eyebrow-size);
+  font-weight: var(--font-eyebrow-weight);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--font-title-size);
+  font-weight: var(--font-title-weight);
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.titleAccent {
+  color: var(--color-brand-accent);
+}
+
+.body {
+  margin: 0;
+  max-width: 28rem;
+  color: var(--color-text-muted);
+  font-size: var(--font-menu-size);
+  font-weight: var(--font-menu-weight);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: min(100%, 20rem);
+  text-align: left;
+}
+
+.label {
+  color: var(--color-text);
+  font-size: var(--font-menu-size);
+}
+
+.input {
+  min-height: var(--layout-button-min-height);
+  padding: 0 12px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--layout-radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--font-menu-size);
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+}
+
+.error {
+  margin: 0;
+  color: var(--color-ink-red);
+  font-size: var(--font-menu-size);
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-size: var(--font-menu-size);
+}
+
+.button {
+  min-height: var(--layout-button-min-height);
+  padding: 0 24px;
+  border: 2px solid transparent;
+  border-radius: var(--layout-radius);
+  background: var(--color-brand-primary);
+  color: var(--color-bg);
+  font-size: var(--font-button-label-size);
+  font-weight: var(--font-button-label-weight);
+  cursor: pointer;
+}
+
+.buttonSecondary {
+  background: var(--color-surface-raised);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 3px;
+}
