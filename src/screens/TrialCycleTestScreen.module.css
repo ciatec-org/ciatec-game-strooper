@@ -1,0 +1,69 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-menu-gap);
+  min-height: 100svh;
+  padding: var(--layout-menu-gap);
+  box-sizing: border-box;
+}
+
+.hint {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-eyebrow-size);
+  font-weight: var(--font-eyebrow-weight);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.stage {
+  position: relative;
+  flex: 1;
+  min-height: 200px;
+}
+
+.done,
+.feedback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  font-size: var(--font-title-size);
+  font-weight: var(--font-title-weight);
+  color: var(--color-text-muted);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--layout-button-gap);
+}
+
+.button {
+  min-height: var(--layout-button-min-height);
+  border: 2px solid var(--color-border);
+  border-radius: var(--layout-radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--font-button-label-size);
+  font-weight: var(--font-button-label-weight);
+  cursor: pointer;
+}
+
+.button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 3px;
+}
+
+.log {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--color-text-muted);
+  font-size: var(--font-menu-size);
+}
