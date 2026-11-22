@@ -18,8 +18,8 @@
   margin-top: var(--layout-menu-gap);
   padding: 0 24px;
   border: 2px solid var(--color-border);
-  border-radius: 8px;
-  background: var(--color-surface);
+  border-radius: var(--layout-radius);
+  background: var(--color-surface-raised);
   color: var(--color-text);
   font-size: var(--font-button-label-size);
   font-weight: var(--font-button-label-weight);

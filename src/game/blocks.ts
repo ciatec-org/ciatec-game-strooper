@@ -13,18 +13,16 @@ export const BLOCKS = [
   {
     id: 'baseline',
     // TODO(GDD-15.4): provisional baseline size and mix until the research team decides.
-    // TODO(GDD-15.9): provisional feedback on all blocks (see behaviors.md).
     counts: { congruent: 20, incongruent: 0, neutral: 20 },
-    feedback: true,
+    feedback: true, // DD-09: feedback on all blocks
     scores: true,
   },
   {
     id: 'stroop',
     // TODO(GDD-15.4): provisional stroop size until the research team decides.
     // TODO(GDD-15.5): provisional 0 neutrals in stroop; BlockConfig still accepts neutrals.
-    // TODO(GDD-15.9): provisional feedback on all blocks (see behaviors.md).
     counts: { congruent: 10, incongruent: 30, neutral: 0 },
-    feedback: true,
+    feedback: true, // DD-09: feedback on all blocks
     scores: true,
   },
 ] as const satisfies readonly BlockConfig[]

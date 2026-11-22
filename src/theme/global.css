@@ -15,5 +15,6 @@ body {
   color: var(--color-text);
   font-family: var(--font-family);
   font-size: var(--font-menu-size);
+  font-weight: var(--font-menu-weight);
   -webkit-font-smoothing: antialiased;
 }
