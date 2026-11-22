@@ -1,8 +1,9 @@
-import { useCallback, useMemo, useState, type PointerEvent } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { FixationCross } from '../components/FixationCross'
+import { ResponseButtons } from '../components/ResponseButtons'
 import { StimulusWord } from '../components/StimulusWord'
 import { strings } from '../content/strings'
-import { COLOR_ORDER, COLOR_WORDS } from '../game/colors'
+import { COLOR_WORDS } from '../game/colors'
 import { createRng } from '../game/rng'
 import type { ColorId, Stimulus, TrialRecord } from '../game/types'
 import { useTrialRunner } from '../trial/useTrialRunner'
@@ -37,8 +38,8 @@ const DEMO_STIMULI: readonly Stimulus[] = [
 ]
 
 /**
- * Provisional screen to exercise the trial cycle (B-03). Replaced by
- * BlockScreen + ResponseButtons in the student tasks (US-03.2 / US-03.1).
+ * Provisional screen to exercise the trial cycle (B-03). ResponseButtons
+ * (T-03.1.2) logs color + timeStamp; BlockScreen replaces this in T-03.2.1.
  */
 export function TrialCycleTestScreen() {
   const rng = useMemo(() => createRng(1), [])
@@ -54,20 +55,17 @@ export function TrialCycleTestScreen() {
     ])
   }, [])
 
-  const { phase, stimulus, isComplete, acceptingResponse, respond } =
-    useTrialRunner({
-      stimuli: DEMO_STIMULI,
-      rng,
-      feedback: true,
-      onTrialComplete,
-    })
+  const { phase, stimulus, isComplete, respond } = useTrialRunner({
+    stimuli: DEMO_STIMULI,
+    rng,
+    feedback: true,
+    onTrialComplete,
+  })
 
-  function handlePointerDown(
-    color: ColorId,
-    event: PointerEvent<HTMLButtonElement>,
-  ) {
-    // pointerdown + event.timeStamp — never click (timing.md).
-    respond(color, event.timeStamp)
+  function handleResponse(color: ColorId, timeStamp: number) {
+    // US-03.1: show label + event.timeStamp on pointerdown (not click).
+    console.log(COLOR_WORDS[color], timeStamp)
+    respond(color, timeStamp)
   }
 
   return (
@@ -90,21 +88,7 @@ export function TrialCycleTestScreen() {
         ) : null}
       </div>
 
-      <div className={styles.buttons} role="group" aria-label={strings.trialCycle.buttons}>
-        {COLOR_ORDER.map((color) => (
-          <button
-            key={color}
-            type="button"
-            className={styles.button}
-            disabled={isComplete || !acceptingResponse}
-            onPointerDown={(event) => {
-              handlePointerDown(color, event)
-            }}
-          >
-            {COLOR_WORDS[color]}
-          </button>
-        ))}
-      </div>
+      <ResponseButtons onResponse={handleResponse} />
 
       {log.length > 0 ? (
         <ul className={styles.log}>
