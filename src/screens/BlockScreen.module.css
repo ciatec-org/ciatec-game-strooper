@@ -1,0 +1,15 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-menu-gap);
+  min-height: 100svh;
+  padding: var(--layout-menu-gap);
+  box-sizing: border-box;
+}
+
+/* Positioned parent: FixationCross and StimulusWord fill it (absolute, inset 0). */
+.stage {
+  position: relative;
+  flex: 1;
+  min-height: 200px;
+}

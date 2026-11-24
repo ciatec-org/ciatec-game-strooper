@@ -24,11 +24,6 @@ export const strings = {
     stroop: 'Última parte! Continue tocando na cor da tinta.',
     continue: 'Continuar',
   },
-  block: {
-    /** Placeholder until T-03.2.1 ships the real BlockScreen. */
-    stubHint: 'Bloco em andamento (esqueleto B-04)',
-    stubComplete: 'Concluir bloco',
-  },
   result: {
     title: 'Fim',
     done: 'Você terminou! Obrigado por jogar.',

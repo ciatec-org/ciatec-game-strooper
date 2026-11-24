@@ -1,7 +1,17 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { strings } from '../content/strings'
 import App from './App'
+
+// The real BlockScreen runs timed trials; this test only checks the screen flow.
+const FINISH_BLOCK = 'test: finish block'
+vi.mock('../screens/BlockScreen', () => ({
+  BlockScreen: ({ onComplete }: { onComplete: () => void }) => (
+    <button type="button" onClick={onComplete}>
+      {FINISH_BLOCK}
+    </button>
+  ),
+}))
 
 describe('App session shell', () => {
   it('blocks starting a session without a participant code', () => {
@@ -18,7 +28,7 @@ describe('App session shell', () => {
     expect(screen.getByText(strings.setup.title)).toBeInTheDocument()
   })
 
-  it('walks from start to result through the block stubs', () => {
+  it('walks from start to result through the blocks', () => {
     render(<App />)
 
     fireEvent.click(screen.getByRole('button', { name: strings.start.begin }))
@@ -35,7 +45,7 @@ describe('App session shell', () => {
     // practice → baseline → stroop
     for (let i = 0; i < 3; i += 1) {
       fireEvent.click(
-        screen.getByRole('button', { name: strings.block.stubComplete }),
+        screen.getByRole('button', { name: FINISH_BLOCK }),
       )
       if (i < 2) {
         fireEvent.click(
