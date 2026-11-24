@@ -1,5 +1,5 @@
-import { useReducer } from 'react'
-import { BlockScreenStub } from '../screens/BlockScreenStub'
+import { useReducer, useState } from 'react'
+import { BlockScreen } from '../screens/BlockScreen'
 import { InstructionsScreen } from '../screens/InstructionsScreen'
 import { ResultScreen } from '../screens/ResultScreen'
 import { SetupScreen } from '../screens/SetupScreen'
@@ -12,11 +12,12 @@ import {
 } from './sessionMachine'
 
 /**
- * Session shell (B-04 / SPEC-05). BlockScreenStub stands in until T-03.2.1;
- * download hooks in with SPEC-07 / T-04.2.2.
+ * Session shell (B-04 / SPEC-05). Download hooks in with SPEC-07 / T-04.2.2.
  */
 function App() {
   const [session, dispatch] = useReducer(sessionReduce, undefined, createSessionState)
+  // Drawn once per session; goes into the JSON as rng_seed with T-04.2.x.
+  const [rngSeed] = useState(() => Math.floor(Math.random() * 2 ** 32))
   const blockId = currentBlockId(session)
 
   switch (session.screen) {
@@ -66,8 +67,10 @@ function App() {
     case 'block':
       if (!blockId) return null
       return (
-        <BlockScreenStub
+        <BlockScreen
+          key={blockId}
           blockId={blockId}
+          seed={rngSeed}
           onComplete={() => {
             dispatch({ type: 'BLOCK_COMPLETE' })
           }}
